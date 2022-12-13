@@ -7,7 +7,7 @@ jobs:
       - image: circleci/buildpack-deps:stretch
     steps:
       - checkout
-      - run: docker build -t "clementgalzi/nodejs:latest"
+      - run: docker build -t clementgalzi/nodejs:latest .
 workflows:
   build_and_test:
     jobs:
