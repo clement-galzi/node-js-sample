@@ -5,8 +5,8 @@ jobs:
   build:
     environment: 
       IMG_NAME: clementgalzi/nodejs
-    docker:
-            - image: circleci/node:10
+    machine:
+      image: ubuntu-2004:202010-01
     steps:
       - checkout
       - setup_remote_docker
