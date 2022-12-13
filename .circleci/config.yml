@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run: docker build -t $IMG_NAME:latest .
-      - run: docker run --rm -d --name= test -p 8080:8080 $IMG_NAME:latest && docker ps --last=1 && curl --retry 12 http://0.0.0.0:8080/ ; docker stop test
+      - run: docker run --rm -d --name=test -p 8080:8080 $IMG_NAME:latest && docker ps --last=1 && curl --retry 12 http://0.0.0.0:8080/ ; docker stop test
 workflows:
   build_and_test:
     jobs:
