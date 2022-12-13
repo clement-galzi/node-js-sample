@@ -14,8 +14,6 @@ jobs:
       - run:
           name: Testing docker image
           command: docker run -d --name=test -p 8080:8080 $IMAGE_NAME:latest 
-      - run: curl --retry 12 http://0.0.0.0:8080/  
-      - run: docker stop test
 workflows:
   build_and_test:
     jobs:
