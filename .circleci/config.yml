@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run: docker build -t $IMG_NAME:latest .
       - run: docker run --rm -d --name=test -p 8080:8080 $IMG_NAME:latest && sleep 10 && curl http://0.0.0.0:8080/ ; docker stop test
-      - run: echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USERNAME --password-stdin && docker push $IMAGE_NAME:latest
+      - run: echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USERNAME --password-stdin && docker push $IMG_NAME:latest
 workflows:
   build_and_test:
     jobs:
