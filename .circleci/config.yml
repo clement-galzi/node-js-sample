@@ -4,10 +4,10 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: nodejs:latest
+      - image: clementgalzi/nodejs:latest
     steps:
       - checkout
-      - run: docker build ./
+      - run: docker build -t clementgalzi/nodejs:latest
 workflows:
   build_and_test:
     jobs:
