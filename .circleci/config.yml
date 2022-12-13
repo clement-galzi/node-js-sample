@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: clementgalzi/nodejs:latest
+      - image: clementgalzi/nodejs
     steps:
       - checkout
       - run: docker build -t clementgalzi/nodejs
