@@ -3,11 +3,14 @@ version: 2.1
 # Define the jobs we want to run for this project
 jobs:
   build:
+    environment: 
+      IMG_NAME: clementgalzi/nodejs
     docker:
-      - image: circleci/buildpack-deps:stretch
+            - image: circleci/node:10
     steps:
       - checkout
-      - run: docker build -t clementgalzi/nodejs:latest .
+      - setup_remote_docker
+      - run: docker build -t $IMG_NAME:latest .
 workflows:
   build_and_test:
     jobs:
