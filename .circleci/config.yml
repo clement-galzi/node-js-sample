@@ -7,7 +7,7 @@ jobs:
       - image: nodejs:latest
     steps:
       - checkout
-      - run: echo "this is the build job"
+      - run: docker build ./
 workflows:
   build_and_test:
     jobs:
