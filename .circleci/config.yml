@@ -14,6 +14,13 @@ jobs:
       - run:
           name: Testing docker image
           command: docker run -d --name=test -p 8080:8080 $IMG_NAME:latest 
+      - run:
+          name: curl de l adresse
+          command: curl http://0.0.0.0:8080/
+      - run:
+          name: stop container
+          command: docker stop test
+
 workflows:
   build_and_test:
     jobs:
