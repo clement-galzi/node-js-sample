@@ -13,7 +13,7 @@ jobs:
       - run: docker build -t $IMG_NAME:latest .
       - run:
           name: Testing docker image
-          command: docker run -d --name=test -p 8080:8080 $IMAGE_NAME:latest 
+          command: docker run -d --name=test -p 8080:8080 $IMG_NAME:latest 
 workflows:
   build_and_test:
     jobs:
